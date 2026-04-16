@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adriano Corretor | João Pessoa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#05070b;--panel:rgba(10,16,24,.72);--card:rgba(14,22,34,.82);--line:rgba(255,255,255,.08);--gold:#d7b56d;--gold2:#f4dfaa;--text:#f7f8fb;--muted:#b6c0cf;--blue:#7bb7ff;--blue2:#4c9cff;--shadow:0 24px 80px rgba(0,0,0,.45)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:radial-gradient(circle at top,#173455 0%,#08111b 38%,#04070b 100%);color:var(--text);line-height:1.65}
+    a{text-decoration:none;color:inherit}
+    .top{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,9,14,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav{max-width:1300px;margin:auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .logo{font-weight:800;letter-spacing:1px;color:var(--gold2)}
+    .navlinks{display:flex;gap:16px;flex-wrap:wrap;font-size:.95rem;color:#e8eef7}
+    .navlinks a:hover{color:var(--gold2)}
+    .hero{min-height:100vh;padding:120px 24px 80px;display:grid;place-items:center;background:linear-gradient(180deg,rgba(0,0,0,.36),rgba(0,0,0,.72)),url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1800&q=80') center/cover}
+    .hero-box{max-width:1240px;width:100%;background:linear-gradient(180deg,rgba(11,18,27,.84),rgba(10,16,24,.58));border:1px solid rgba(255,255,255,.10);border-radius:36px;padding:46px;box-shadow:var(--shadow);backdrop-filter:blur(12px);position:relative;overflow:hidden}
+    .hero-box:before{content:'';position:absolute;inset:-2px;background:linear-gradient(135deg,rgba(244,223,170,.18),transparent 30%,transparent 70%,rgba(123,183,255,.14));pointer-events:none}
+    .badge{display:inline-block;padding:10px 16px;border-radius:999px;background:rgba(215,181,109,.12);border:1px solid rgba(215,181,109,.25);color:var(--gold2);font-weight:700;font-size:.9rem;margin-bottom:18px}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(2.9rem,6vw,6rem);line-height:1.02;margin-bottom:14px;letter-spacing:-.02em}
+    .lead{max-width:860px;color:#eef3fb;font-size:1.08rem;margin-bottom:24px}
+    .promo{display:inline-flex;align-items:center;gap:10px;padding:18px 22px;border-radius:18px;background:linear-gradient(135deg,#1c3b66,#6a4cff);border:1px solid rgba(255,255,255,.12);font-weight:800;box-shadow:0 16px 32px rgba(0,0,0,.22)}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .btn{padding:14px 22px;border-radius:14px;font-weight:800;transition:.2s transform ease,.2s opacity ease;display:inline-block}
+    .btn:hover{transform:translateY(-2px);opacity:.96}
+    .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a2029}
+    .btn-dark{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:#fff}
+    .section{max-width:1300px;margin:auto;padding:88px 24px}
+    .section h2{font-family:'Playfair Display',serif;font-size:2.35rem;color:var(--gold2);margin-bottom:10px}
+    .section p.sub{max-width:880px;color:var(--muted);margin-bottom:28px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:26px;overflow:hidden;box-shadow:0 18px 46px rgba(0,0,0,.28)}
+    .card img{width:100%;height:240px;object-fit:cover;display:block}
+    .card .body{padding:18px}
+    .tag{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:800;margin-bottom:10px}
+    .card h3{font-size:1.22rem;margin-bottom:8px}
+    .card p{color:var(--muted);font-size:.95rem}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+    .panel{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 18px 40px rgba(0,0,0,.24)}
+    .panel ul{padding-left:18px;display:grid;gap:10px;color:#edf3fb}
+    .chat{display:grid;gap:12px}
+    .bubble{padding:14px 16px;border-radius:18px;max-width:90%}
+    .bot{background:#121d2b;border:1px solid #22364d}
+    .user{margin-left:auto;background:#132b25;border:1px solid #245647}
+    .input{margin-top:12px;width:100%;padding:15px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:#0a121c;color:#fff}
+    .game{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .choice{cursor:pointer;transition:.2s transform ease,.2s border-color ease;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:22px;overflow:hidden}
+    .choice:hover{transform:translateY(-3px);border-color:rgba(215,181,109,.55)}
+    .choice img{width:100%;height:170px;object-fit:cover;display:block}
+    .choice .body{padding:16px}
+    .score{margin-top:16px;padding:16px;border-radius:18px;background:rgba(215,181,109,.10);border:1px solid rgba(215,181,109,.18);color:#fff}
+    .leadform{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .footer{padding:30px 24px;text-align:center;color:#b8c3d4;border-top:1px solid rgba(255,255,255,.06);background:#04070b}
+    .whats{position:fixed;right:18px;bottom:18px;z-index:200;background:#25D366;color:#fff;padding:14px 18px;border-radius:999px;font-weight:800;box-shadow:0 14px 30px rgba(0,0,0,.32)}
+    @media(max-width:900px){.split{grid-template-columns:1fr}.hero-box{padding:30px}.nav{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="nav">
+      <div class="logo">ADRIANO CORRETOR • JOÃO PESSOA</div>
+      <div class="navlinks">
+        <a href="#sobre">Sobre</a>
+        <a href="#imoveis">Imóveis</a>
+        <a href="#chat">Chat IA</a>
+        <a href="#jogo">Jogo</a>
+        <a href="#lead">Leads</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-box">
+      <div class="badge">✨ Luxo imobiliário em João Pessoa</div>
+      <h1>Adriano Corretor</h1>
+      <p class="lead">Um site imobiliário sofisticado, moderno e altamente comercial, criado para destacar imóveis premium com visual luxuoso, atendimento por IA e experiência interativa para gerar mais contatos e mais vendas.</p>
+      <div class="promo">Imóveis exclusivos, atendimento 24h e design de alto padrão.</div>
+      <div class="cta">
+        <a class="btn btn-gold" href="#imoveis">Explorar imóveis</a>
+        <a class="btn btn-dark" href="#chat">Abrir chat IA</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sobre">
+    <h2>Identidade premium</h2>
+    <p class="sub">A nova versão valoriza imagem, autoridade e conversão. O visual usa fundo escuro, dourado elegante, azul refinado e tipografia premium para transmitir exclusividade.</p>
+    <div class="split">
+      <div class="panel">
+        <h3 style="color:#fff;margin-bottom:10px;">O que este site entrega</h3>
+        <ul>
+          <li>Visual de luxo com cara de imobiliária de alto padrão.</li>
+          <li>Imóveis com imagens grandes e bem apresentadas.</li>
+          <li>Formulário de captação de leads integrado.</li>
+          <li>Chat IA para atendimento rápido e inteligente.</li>
+          <li>Jogo interativo de casas para aumentar engajamento.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3 style="color:#fff;margin-bottom:10px;">Estratégia comercial</h3>
+        <ul>
+          <li>Mostra valor antes de falar de preço.</li>
+          <li>Estimula o visitante a pedir contato.</li>
+          <li>Passa confiança com layout limpo e elegante.</li>
+          <li>Funciona bem no celular e no computador.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="imoveis">
+    <h2>Imóveis em destaque</h2>
+    <p class="sub">Galeria premium para apresentar casas e residências de forma impactante, com estética próxima ao 5D visual que você pediu.</p>
+    <div class="grid">
+      <div class="card"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80" alt="Casa premium" /><div class="body"><div class="tag">Residência de luxo</div><h3>Casa com piscina</h3><p>Fachada moderna, jardim sofisticado e presença elegante.</p></div></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Casa elegante" /><div class="body"><div class="tag">Alto padrão</div><h3>Projeto contemporâneo</h3><p>Ambientes amplos, iluminação natural e acabamento refinado.</p></div></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Casa contemporânea" /><div class="body"><div class="tag">Exclusividade</div><h3>Casa sofisticada</h3><p>Design marcante para clientes exigentes e investidores.</p></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="chat">
+    <h2>Chat IA profissional</h2>
+    <p class="sub">O atendimento automático ajuda a responder dúvidas e captar interesse de forma imediata.</p>
+    <div class="panel">
+      <div class="chat">
+        <div class="bubble bot">Olá! Eu sou a IA do Adriano Corretor. Posso mostrar imóveis em João Pessoa por região, tamanho e faixa de valor.</div>
+        <div class="bubble user">Quero uma casa luxuosa com piscina.</div>
+        <div class="bubble bot">Perfeito. Posso te enviar opções com área gourmet, suíte master e acabamento premium.</div>
+        <div class="bubble user">Quero falar com o corretor.</div>
+        <div class="bubble bot">Deixe seu nome e telefone no formulário abaixo ou clique no WhatsApp para atendimento imediato.</div>
+        <input class="input" type="text" placeholder="Digite sua mensagem..." />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="jogo">
+    <h2>Jogo interativo de casas</h2>
+    <p class="sub">O visitante escolhe um estilo e recebe uma sugestão visual. Isso aumenta o tempo no site e melhora a experiência.</p>
+    <div class="game">
+      <div class="choice" onclick="pick('Casa moderna com piscina e área gourmet')"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Casa moderna" /><div class="body"><h3>Casa moderna</h3><p>Vidro, piscina e design limpo.</p></div></div>
+      <div class="choice" onclick="pick('Casa clássica confortável e elegante')"><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80" alt="Casa clássica" /><div class="body"><h3>Casa clássica</h3><p>Espaço, conforto e sofisticação.</p></div></div>
+      <div class="choice" onclick="pick('Casa de alto padrão com acabamento premium')"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Casa alto padrão" /><div class="body"><h3>Alto padrão</h3><p>Exclusiva, refinada e valorizada.</p></div></div>
+    </div>
+    <div class="score" id="resultado">Clique em uma casa para ver a sugestão ideal.</div>
+  </section>
+
+  <section class="section" id="lead">
+    <h2>Receba opções de imóveis</h2>
+    <p class="sub">Deixe seus dados para receber casas em João Pessoa de acordo com seu perfil.</p>
+    <div class="panel">
+      <form>
+        <div class="leadform">
+          <input class="input" type="text" placeholder="Seu nome" />
+          <input class="input" type="tel" placeholder="Seu telefone" />
+          <input class="input" type="text" placeholder="Bairro ou cidade" />
+          <input class="input" type="text" placeholder="Tipo de imóvel" />
+        </div>
+        <button type="button" class="btn btn-gold" style="margin-top:14px;border:none;cursor:pointer;">Quero receber opções</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section" id="contato">
+    <h2>Contato</h2>
+    <p class="sub">WhatsApp e atendimento direto para fechar visitas e apresentar imóveis com agilidade.</p>
+    <div class="panel">
+      <ul style="padding-left:18px;display:grid;gap:10px;color:#edf3fb;">
+        <li>WhatsApp: botão flutuante disponível.</li>
+        <li>Cidade: João Pessoa - PB</li>
+        <li>Atendimento: 24 horas via IA.</li>
+        <li>Contato direto com o corretor em instantes.</li>
+      </ul>
+    </div>
+  </section>
+
+  <a class="whats" href="https://wa.me/558399397044">WhatsApp</a>
+  <div class="footer">Adriano Corretor © 2026 — imóveis premium em João Pessoa.</div>
+  <script>
+    function pick(txt){document.getElementById('resultado').textContent='Sugestão escolhida: '+txt+'. O sistema pode direcionar o cliente para imóveis parecidos, com fotos e detalhes personalizados.';}
+  </script>
+</body>
+</html>
